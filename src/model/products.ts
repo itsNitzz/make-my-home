@@ -6,3 +6,8 @@ export interface ProductItemType {
   company: string;
   description: string;
 }
+
+export interface CartItemType extends ProductItemType {
+  quantity: number;
+  totalPrice: number;
+}

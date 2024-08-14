@@ -10,19 +10,20 @@ export default function ProductsView() {
 
   const dispatch = useDispatch();
 
-  const activeClass = "bg-blue-500 hover:bg-blue-500 text-blue-100";
+  const activeClass =
+    "bg-blue-500 dark:bg-pink-400 hover:bg-blue-500 dark:hover:bg-pink-400 text-blue-100 dark:text-dark-blue";
   return (
     <div className="flex items-center gap-2 text-xl">
       <Button
         onClick={() => dispatch(productsActions.setGrid())}
-        styles={`p-2 rounded-full hover:bg-gray-200 ${
+        styles={`p-2 rounded-full hover:bg-gray-200 dark:hover:bg-zinc-700/70 ${
           mode === "grid" ? activeClass : ""
         }`}>
         <GridIcon />
       </Button>
       <Button
         onClick={() => dispatch(productsActions.setList())}
-        styles={`p-2 rounded-full hover:bg-gray-200 ${
+        styles={`p-2 rounded-full hover:bg-gray-200 dark:hover:bg-zinc-700/70 ${
           mode === "list" ? activeClass : ""
         }`}>
         <ListIcon styles="size-5" />

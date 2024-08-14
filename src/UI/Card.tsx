@@ -7,6 +7,6 @@ export default function Card({
   children: ReactNode;
   classeName: string;
 }) {
-  const styles = "rounded-2xl p-2  shadow-lg shadow-slate-200 " + classeName;
+  const styles = "rounded-2xl p-2  shadow-lg shadow-gray-300 " + classeName;
   return <div className={styles}>{children}</div>;
 }

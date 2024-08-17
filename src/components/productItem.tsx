@@ -3,13 +3,19 @@ import Card from "../UI/Card";
 import { useAppSelector } from "../store/hooks";
 import { Link } from "react-router-dom";
 
-export default function ProductItem({ item }: { item: ProductItemType }) {
+export default function ProductItem({
+  item,
+  showList = true,
+}: {
+  item: ProductItemType;
+  showList?: boolean;
+}) {
   const { mode } = useAppSelector((state) => state.productsState);
 
-  if (mode === "list") {
+  if (mode === "list" && showList) {
     return (
       <Link to={`/products/${item.id}`}>
-        <Card classeName="group transition-shadow duration-300 linear hover:shadow-xl hover:shadow-gray-300 flex flex-col sm:flex-row items-center sm:items-start sm:justify-between items-start p-8 gap-5 sm:gap-0">
+        <Card classeName=" max-h-[22rem] group transition-shadow duration-300 linear hover:shadow-xl hover:shadow-gray-300 flex flex-col sm:flex-row items-center sm:items-start sm:justify-between items-start p-8 gap-5 sm:gap-0">
           <div className="flex flex-col sm:flex-row text-center sm:text-left gap-10">
             <img
               src={item.image}
@@ -34,7 +40,7 @@ export default function ProductItem({ item }: { item: ProductItemType }) {
 
   return (
     <Link to={`/products/${item.id}`}>
-      <Card classeName="flex flex-col items-center">
+      <Card classeName="max-h-[22rem] flex flex-col items-center">
         <img src={item.image} className="h-48 w-64 object-cover rounded-2xl" />
         <div className="flex flex-col p-8 w-full text-center gap-2">
           <h2 className="text-xl text-blue-950/85 dark:text-zinc-100 font-semibold">

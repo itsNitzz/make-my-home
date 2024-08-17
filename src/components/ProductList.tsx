@@ -26,7 +26,7 @@ export default function ProductList() {
       </div>
       <div
         className={`grid grid-cols-1 gap-10 ${
-          !mode || mode === "grid" ? "sm:grid-cols-2 md:grid-cols-3" : ""
+          !mode || mode === "grid" ? "sm:grid-cols-2 lg:grid-cols-3" : ""
         }`}>
         {productsList.map((item: ProductItemType) => (
           <ProductItem key={item.id} item={item} />
